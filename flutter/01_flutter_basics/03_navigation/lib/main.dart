@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
     final title = 'Basic List w/ navigation';
 
     return MaterialApp(
+      // theme: ThemeData.dark(),
       title: title,
       home: ListPage(
         title: title,

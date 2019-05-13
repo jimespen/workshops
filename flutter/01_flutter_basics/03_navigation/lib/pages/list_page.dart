@@ -20,15 +20,25 @@ class ListPage extends StatelessWidget {
           itemCount: items.length,
           itemBuilder: (context, index) {
             var item = items[index];
-            return ListTile(
-              title: Text(item.title),
-              leading: Icon(item.iconData),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => DetailPage(listItem: item)));
-              },
+            return Container(
+              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              decoration: BoxDecoration(
+                  color: (index % 2 == 0)
+                      ? Colors.lightBlueAccent
+                      : Colors.greenAccent,
+                  border: Border.fromBorderSide(BorderSide()),
+                  borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(55), right: Radius.circular(55))),
+              child: ListTile(
+                title: Text(item.title),
+                leading: Icon(item.iconData),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(listItem: item)));
+                },
+              ),
             );
           },
         ),
